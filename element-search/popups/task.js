@@ -10,6 +10,9 @@ function Show() {
         sucPop.style.display="none";
     };
  };
- sucBtn.onclick=() => sucPop.classList.add("modal_active");   
+ sucBtn.onclick=() => {
+    pop.classList.remove("modal_active");
+    sucPop.classList.add("modal_active");
+};   
 }
 setTimeout(Show,1000);
