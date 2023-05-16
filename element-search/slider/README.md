@@ -26,7 +26,7 @@
 
 ```html
 <div class="slider__item slider__item_active">
-    <!-- ... -->
+     ... 
 </div>
 ```
 

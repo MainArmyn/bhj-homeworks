@@ -45,7 +45,7 @@
 
 ```html
 <ul class="menu menu_sub menu_active">
-    <!-- ... -->
+     ... 
 </ul>
 
 ```

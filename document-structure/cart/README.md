@@ -17,7 +17,7 @@
 
 ```html
 <div class="product" data-id="1">
-    <!-- ... -->
+     ... 
 </div>
 ```
 

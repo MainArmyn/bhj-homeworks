@@ -32,13 +32,13 @@ HTML-разметка делится на 2 части:
 </div>
 <div class="tab__contents">
     <div class="tab__content tab__content_active">
-        <!-- Текст вкладки «Главная» -->
+         Текст вкладки «Главная» 
     </div>
     <div class="tab__content">
-        <!-- Текст вкладки «Обо мне» -->
+         Текст вкладки «Обо мне» 
     </div>
     <div class="tab__content">
-        <!-- Текст вкладки «Контакты» -->
+         Текст вкладки «Контакты» 
     </div>
 </div>
 ```
@@ -57,7 +57,7 @@ HTML-разметка делится на 2 части:
 
 ```html
 <div class="tab__content tab__content_active">
-    <!-- Текст вкладки «Главная» -->
+     Текст вкладки «Главная» 
 </div>
 ```
 

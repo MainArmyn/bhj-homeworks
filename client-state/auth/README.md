@@ -37,7 +37,7 @@
 
 ```html
 <div class="signin signin_active">
-    <!-- ... -->
+     ... 
 </div>
 ```
 
@@ -77,7 +77,7 @@
 
 ```html
 <div class="welcome welcome_active">
-    <!-- ... -->
+     ... 
 </div>
 ```
 

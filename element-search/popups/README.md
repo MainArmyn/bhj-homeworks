@@ -29,7 +29,7 @@
 
 ```html
 <div class="modal modal_active">
-    <!-- ... -->
+     ... 
 </div>
 ```
 

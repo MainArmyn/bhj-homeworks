@@ -36,7 +36,7 @@
 
 ```html
 <div class="modal modal_active" id="subscribe-modal">
-    <!-- ... -->
+     ... 
 </div>
 ```
 

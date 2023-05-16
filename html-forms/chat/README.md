@@ -18,7 +18,7 @@
 
 ```html
 <div class="chat-widget">
-    <!-- ... -->
+     ... 
 </div>
 ```
 
@@ -27,7 +27,7 @@
 
 ```html
 <div class="chat-widget chat-widget_active">
-    <!-- ... -->
+     ... 
 </div>
 ```
 
