@@ -40,7 +40,7 @@ function ChatGpd() {
     chatBtn.onclick = function() {
         chat.classList.add("chat-widget_active");
         setTimeout(() => {
-            if (chatInput.value==='') {
+            if (chatInput.value.trim()==='') {
                 BotSendMessage("Тебе надоело?");
                 return;
             } 
