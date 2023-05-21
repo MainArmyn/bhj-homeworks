@@ -3,15 +3,36 @@ class TodoList {
         this.container = document.querySelector(taskListClass);
         this.input = document.querySelector(inputClass);
         this.button = document.querySelector(buttonClass);
-        this.button.type = "button";
         this.Storage = window.localStorage;
-        this.key;
+        this.input.required = true;
+        this.key = 0;
         this.InputText();
         this.ButtonInput();
+        this.GetItemsFromStorage();
     }
 
 
     
+GetItemsFromStorage() {
+    for (let i=0;i<100;i++) {
+        let el = this.Storage.getItem(String(i));
+        if (el != null) {
+            this.key=i;
+            let task = document.createElement("div");
+            task.innerHTML = JSON.parse(el);
+            task.className = "task";
+            task.dataset.key = i;
+            this.InitialTask(task);
+            this.container.appendChild(task);
+        }
+    }
+}
+CheckInputValid() {
+    if (this.input.value != '') {
+        return true;
+    }
+    return false;
+}
 
 ClearInput() {
     this.input.value = '';
@@ -26,21 +47,26 @@ InitialTask(task) {
 }
 
     InputText() {
-        this.input.addEventListener("keydown", function(e){
+        this.input.addEventListener("keydown", (e) => {
             if (e.key==="Enter") {
-                this.addTask();
+                if (this.CheckInputValid()) {
+                    this.addTask();
+                }  
             }
         });
     }
 
     ButtonInput() {
         this.button.addEventListener("click",e => {
-            this.addTask();
+            if (this.CheckInputValid()) {
+                this.addTask();
+            } 
         })
     }
 
     removeTask(el) {
         this.container.removeChild(el);
+        this.Storage.removeItem(String(el.dataset.key));
     }
 
 
@@ -48,13 +74,25 @@ InitialTask(task) {
         let messageText = this.input.value;
         let message = document.createElement("div");
         message.className = "task";
+        message.dataset.key = this.key;
         message.innerHTML = `<div class="task__title">${messageText}
       </div>
       <a href="#" class="task__remove">&times;</a>`;
       this.InitialTask(message);
-      this.container.appendChild(message);
-      this.ClearInput();
+      try {
+        this.key+=1;
+        this.Storage.setItem(this.key,JSON.stringify(message.innerHTML));
+        this.container.appendChild(message);
+        this.ClearInput();
+      } catch (e) {
+        if (e == QUOTA_EXCEEDED_ERR) {
+         alert('Превышен лимит');
+         this.Storage.clear();
+        }
+      }
     }
 
 }
 new TodoList(".tasks__list",".tasks__input",".tasks__add");
+
+
