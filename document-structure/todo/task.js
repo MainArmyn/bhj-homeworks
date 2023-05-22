@@ -28,9 +28,10 @@ GetItemsFromStorage() {
     }
 }
 CheckInputValid() {
-    if (this.input.value != '') {
+    if (this.input.value.trim() != '') {
         return true;
     }
+    this.input.value = '';
     return false;
 }
 
