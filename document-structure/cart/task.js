@@ -95,6 +95,9 @@ CheckCopyElements(item) {
             };
 
             addButton.addEventListener('click' , e => {
+                if (value.textContent == 0) {
+                    return;
+                }
                 this.addProduct(item);
                 this.number = idx + 1;
             });
