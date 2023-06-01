@@ -45,3 +45,11 @@
   display: block;
   text-align: center;
 }
+
+.log-out {
+  border-radius: 20px;
+  background-color: aqua;
+  color: white;
+  border: 0;
+  
+}
